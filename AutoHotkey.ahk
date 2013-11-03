@@ -50,6 +50,27 @@ return
 
 ;; delete becomes backspace
 ;; this can and probably should be done with the teck firmware
-Del::
-Send {Backspace}
+;Del::
+;Send {Backspace}
+;return
+
+;; Enter as control, useful on non-teck computer
+Enter::
+Send {Ctrl Down}
+KeyWait, Enter
+Send {Ctrl Up}
+if ( A_PriorKey = "Enter" )
+{
+	Send {Enter}
+}
+return
+
+CapsLock::
+Send {Ctrl Down}
+KeyWait, CapsLock
+Send {Ctrl Up}
+if ( A_PriorKey = "CapsLock" )
+{
+	Send {Esc}
+}
 return
