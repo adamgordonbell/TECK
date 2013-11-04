@@ -23,19 +23,18 @@ if ( A_PriorKey = "RControl" )
 {
 	Send {Enter}
 }
-return
 
-;; left control becomes esc if pressed by itself (for VIM)
+;; left control becomes esc if pressed by itself (for VIM)
 ;; I used caps lock as escape with standard keyboards
-LShift::
-Send {Shift Down}
-KeyWait, LShift
-Send {Shift Up}
-if ( A_PriorKey = "LShift" )
-{
-	Send {Esc}
-}
-return
+;LShift::
+;Send {Shift Down}
+;KeyWait, LShift
+;Send {Shift Up}
+;if ( A_PriorKey = "LShift" )
+;{
+;	Send {Esc}
+;}
+;return
 
 ;; Enter as control, useful on non-teck computer
 Enter::
